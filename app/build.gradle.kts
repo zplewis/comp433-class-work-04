@@ -49,6 +49,7 @@ android {
 
 dependencies {
 
+//    this is needed to add the OkHttp library
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     implementation(libs.appcompat)
