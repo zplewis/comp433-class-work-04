@@ -1,3 +1,5 @@
+package com.example.comp433classwork04;
+
 public class CommentItem {
     int photo;
     String name, comment;

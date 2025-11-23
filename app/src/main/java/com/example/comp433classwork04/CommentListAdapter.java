@@ -1,3 +1,5 @@
+package com.example.comp433classwork04;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,8 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-
-import com.example.comp433classwork04.R;
 
 import java.util.ArrayList;
 
@@ -21,13 +21,14 @@ public class CommentListAdapter extends ArrayAdapter<CommentItem> {
      *                 instantiating views.
      * @param objects
      */
-    public CommentListAdapter(@NonNull Context context, int resource, ArrayList<CommentItem> objects) {
-        super(context, resource);
+    public CommentListAdapter(Context context, int resource, ArrayList<CommentItem> objects) {
+        // the "objects" parameter is required here for this to work!
+        super(context, resource, objects);
     }
 
     @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, @NonNull ViewGroup parent) {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
@@ -39,6 +40,8 @@ public class CommentListAdapter extends ArrayAdapter<CommentItem> {
         cImage.setImageResource(currentItem.photo);
         cName.setText(currentItem.name);
         cComment.setText(currentItem.comment);
+
+
         return convertView;
     }
 }
